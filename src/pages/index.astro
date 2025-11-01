@@ -1,82 +1,121 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const title = "Vende tu auto hoy | Oferta inmediata bajo precio de mercado | Tlocompro";
-const description = "¿Necesitas vender tu auto rápido? Oferta inmediata por debajo del mercado, pagada en el acto y retiro en 24 horas.";
+
+const title = "Vende tu auto en 24 horas | Pago inmediato y sin trámites | Tlocompro";
+const description = "Recibe una oferta inmediata y pago en el acto. En Tlocompro compramos tu auto en 24 horas, sin publicar ni perder tiempo. Servicio rápido, seguro y transparente.";
 ---
+
 <BaseLayout {title} {description}>
 
-  <!-- HERO -->
+  <!-- Datos estructurados -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoDealer",
+    "name": "Tlocompro",
+    "image": "https://tlocompro.cl/vender_mi_auto.png",
+    "url": "https://tlocompro.cl",
+    "description": "Compramos tu auto con pago y retiro en 24 horas en todo Chile.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressCountry": "CL"
+    },
+    "areaServed": "Chile",
+    "sameAs": [
+      "https://www.instagram.com/tlocompro",
+      "https://www.facebook.com/tlocompro"
+    ]
+  }
+  </script>
+
+  <!-- HERO centrado -->
   <section class="relative overflow-hidden">
     <div class="absolute inset-0 bg-hero-gradient"></div>
     <div class="absolute inset-0 bg-radial-dots bg-dots opacity-30"></div>
 
-    <div class="relative max-w-6xl mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-16">
-      <div class="max-w-3xl">
-        <span class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-700 border border-teal-200">
-          ⚡ Liquidez inmediata · Oferta bajo mercado
+    <div class="relative max-w-6xl mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-16 md:min-h-screen md:flex md:items-center md:gap-12">
+
+      <!-- TEXTO -->
+      <div class="max-w-3xl md:w-1/2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 shadow-md rounded-full bg-teal-100 text-teal-700 border border-teal-200">
+          ⚡ Liquidez inmediata · ¡Vende tu auto hoy mismo!
         </span>
+
         <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
           Vende tu auto <span class="text-teal-700">hoy</span>.
-          <br />Oferta inmediata <span class="text-teal-700">bajo el precio de mercado</span>.
+          <br />Oferta inmediata <span class="text-teal-700">sin trámites ni esperas.</span>
         </h1>
+
         <p class="mt-4 text-lg text-gray-700 max-w-2xl">
-          Si necesitas vender sin publicar ni esperar, <strong>Tlocompro</strong> paga en el acto y retira en 24 horas.
-          Transparente, rápido y seguro.
+          ¿Necesitas vender tu auto rápido? <strong>En Tlocompro</strong> compramos tu auto en menos de 24 horas. Sin trámites, sin publicación y con pago inmediato.
         </p>
 
         <div class="mt-6 flex flex-wrap items-center gap-3">
-          <a href="/oferta" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-card">
+          <a href="/oferta" class="shadow-md inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl shadow-card" aria-label="Recibir oferta rápida por mi auto">
             💸 Recibir oferta rápida
           </a>
-          <a href="/como-funciona" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border font-semibold hover:border-teal-600 hover:text-teal-700">
+          <a href="/como-funciona" class="shadow-md inline-flex items-center gap-2 px-6 py-3 rounded-xl border font-semibold hover:border-teal-600 hover:text-teal-700" aria-label="Ver cómo funciona Tlocompro">
             ¿Cómo funciona?
           </a>
         </div>
 
-        <!-- Aviso de filtro -->
-        <div class="mt-6 max-w-xl bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-          <p class="font-semibold">🛑 Importante</p>
+        <!-- Aviso -->
+        <div class="mt-6 max-w-xl bg-yellow-50 border border-yellow-200 rounded-xl p-4 shadow-md">
+          <p class="font-semibold">🛑 Importante: ¡Compramos tu auto rápido!</p>
           <p class="text-sm text-gray-700">
-            Si buscas el <strong>precio más alto del mercado</strong>, este servicio no es para ti.
-            Priorizamos <strong>liquidez inmediata</strong>: ofrecemos por debajo del mercado, pero pagamos hoy y retiramos en 24 horas.
+            Si buscas el precio más alto del mercado este servicio no es para ti.
+            Priorizamos <strong>liquidez inmediata</strong> para que puedas <strong>vender tu auto rápidamente</strong>: ofrecemos un precio para revender el vehículo (pero pagamos más que una automotora).
           </p>
         </div>
 
         <!-- Confianza -->
         <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-gray-600">
           <div class="inline-flex items-center gap-2">
-            <span class="h-8 w-8 grid place-items-center rounded-lg bg-white border">🧾</span>
+            <span class="h-8 w-8 grid place-items-center rounded-lg bg-white border shadow-md">🧾</span>
             Firma en notaría
           </div>
           <div class="inline-flex items-center gap-2">
-            <span class="h-8 w-8 grid place-items-center rounded-lg bg-white border">🔐</span>
+            <span class="h-8 w-8 grid place-items-center rounded-lg bg-white border shadow-md">🔐</span>
             Transferencia segura
           </div>
           <div class="inline-flex items-center gap-2">
-            <span class="h-8 w-8 grid place-items-center rounded-lg bg-white border">⏱️</span>
+            <span class="h-8 w-8 grid place-items-center rounded-lg bg-white border shadow-md">⏱️</span>
             Retiro en 24 h
           </div>
         </div>
+      </div>
+
+      <!-- IMAGEN -->
+      <div class="hidden md:block md:w-1/2">
+        <img 
+          src="/vender_mi_auto.png" 
+          alt="Cliente feliz vendiendo su auto a Tlocompro con pago inmediato" 
+          width="600" height="400"
+          class="w-full max-w-md rounded-2xl shadow-md mx-auto"
+          loading="lazy"
+          decoding="async"
+        />
       </div>
     </div>
   </section>
 
   <!-- PASOS -->
   <section class="max-w-6xl mx-auto px-4 mt-12 md:mt-16">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Cómo funciona el proceso para vender tu auto</h2>
     <div class="grid md:grid-cols-3 gap-6">
-      <div class="p-6 border rounded-2xl bg-white shadow-soft">
-        <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-600 text-white mb-3">1</div>
-        <h3 class="font-bold mb-1">Envíanos los datos</h3>
-        <p class="text-gray-600 text-sm">Marca, modelo, año, km, comuna y fotos.</p>
+      <div class="p-6 border rounded-2xl bg-white shadow-md">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">1</div>
+        <h3 class="font-bold mb-1">Envíanos los datos de tu auto</h3>
+        <p class="text-gray-600 text-sm">Marca, modelo, año, km, comuna y fotos. <a href="/oferta" class="text-teal-700 hover:underline">Envía los datos del auto que quieres vender aquí</a>.</p>
       </div>
-      <div class="p-6 border rounded-2xl bg-white shadow-soft">
-        <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-600 text-white mb-3">2</div>
-        <h3 class="font-bold mb-1">Recibe nuestra oferta</h3>
-        <p class="text-gray-600 text-sm">Propuesta <strong>más baja que el mercado</strong>, con pago inmediato.</p>
+      <div class="p-6 border rounded-2xl bg-white shadow-md">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">2</div>
+        <h3 class="font-bold mb-1">Recibe nuestra oferta por tu auto</h3>
+        <p class="text-gray-600 text-sm">Te hacemos una propuesta de precio, si la aceptas, <strong>compramos tu auto inmediatamente</strong>.</p>
       </div>
-      <div class="p-6 border rounded-2xl bg-white shadow-soft">
-        <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-600 text-white mb-3">3</div>
-        <h3 class="font-bold mb-1">Pago y retiro en 24 h</h3>
+      <div class="p-6 border rounded-2xl bg-white shadow-md">
+        <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">3</div>
+        <h3 class="font-bold mb-1">Te pagamos y retiramos tu auto en 24 h</h3>
         <p class="text-gray-600 text-sm">Firma en notaría, transferencia y retiro el mismo día.</p>
       </div>
     </div>
@@ -84,16 +123,18 @@ const description = "¿Necesitas vender tu auto rápido? Oferta inmediata por de
 
   <!-- TESTIMONIO -->
   <section class="max-w-6xl mx-auto px-4 mt-12">
-    <div class="p-6 md:p-8 bg-white border rounded-2xl shadow-card">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Opiniones de quienes ya vendieron su auto con nosotros</h2>
+    <div class="p-6 md:p-8 bg-white border rounded-2xl shadow-card shadow-md">
       <p class="text-gray-700 text-lg leading-relaxed">
-        “Necesitaba vender mi auto urgente. Tlocompro me hizo una oferta clara y cerramos en menos de un día.
-        100% recomendado si buscas liquidez.”
+        “Necesitaba vender mi auto urgente. Tlocompro me hizo una oferta clara y me compraron el auto en menos de un día.
+        100% recomendado si buscas liquidez y vender tu auto rápido.”
       </p>
       <div class="mt-4 text-sm text-gray-600">— Javier R., Santiago</div>
     </div>
   </section>
 
 </BaseLayout>
+
 
 
 

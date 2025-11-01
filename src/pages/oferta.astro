@@ -4,57 +4,124 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const title = "Vende tu auto rápido en Chile | Tasación inmediata en 24 horas | Tlocompro";
 const description = "Completa el formulario para recibir una oferta inmediata por tu vehículo usado. Pago al instante, firma en notaría y retiro en 24 horas en cualquier comuna de Chile.";
 const canonical = "https://tlocompro.cl/oferta";
+const ogImage = "https://tlocompro.cl/images/og-oferta.jpg";
+
+// Datos estructurados (AutoDealer + Offer)
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  name: "Tlocompro",
+  url: "https://tlocompro.cl/",
+  description,
+  areaServed: "Chile",
+  sameAs: [
+    "https://tlocompro.cl/"
+  ],
+  offers: {
+    "@type": "Offer",
+    itemOffered: "Compra de vehículos usados",
+    availability: "https://schema.org/InStock",
+    priceCurrency: "CLP"
+  },
+  potentialAction: {
+    "@type": "QuoteAction",
+    target: canonical,
+    name: "Solicitud de oferta por vehículo"
+  }
+};
 ---
 <BaseLayout {title} {description} {canonical}>
+  {/**
+    IMPORTANTE: Para que estas etiquetas meta y JSON‑LD se inyecten en <head>,
+    tu BaseLayout debe incluir <slot name="head" /> dentro de <head>.
+    Si aún no lo tiene, ábrelo y agrega esa línea.
+  */}
+  <Fragment slot="head">
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
   <section class="max-w-5xl mx-auto px-4 py-8">
     <header class="mb-6">
       <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">Recibe tu oferta inmediata</h1>
-      <p class="mt-2 text-gray-700">En <strong>Tlocompro</strong> compramos autos usados bajo el precio de mercado para ofrecerte <strong>liquidez inmediata</strong>.</p>
+      <p class="mt-2 text-gray-700">En <strong>Tlocompro</strong> compramos tu auto rápidamente, para que tengas <strong>liquidez inmediata</strong>.</p>
+      <h2 class="text-2xl md:text-3xl font-bold mt-6">Tasación gratuita y pago en menos de 24 horas</h2>
     </header>
 
-    <form action="https://script.google.com/macros/s/AKfycbyDiJbUxoCUTXvK8R59CmNyO-GKrcgh0-2tVXk-KzIGR2opVD20bsr7ugL45TnX3gy8vA/exec" method="POST" class="space-y-8">
-      <!-- Campo honeypot anti-spam -->
+    <form id="formularioAuto" class="space-y-8" aria-label="Formulario para recibir oferta por tu auto">
+      {/** Campo honeypot anti-spam */}
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-      <!-- Datos del vehículo -->
-      <section class="bg-white border rounded-2xl shadow-card p-6">
+      {/** Datos del vehículo */}
+      <section class="bg-white border rounded-2xl shadow-card p-6 shadow-md" >
         <h3 class="text-lg font-bold mb-4">1) Datos del vehículo</h3>
         <div class="grid md:grid-cols-4 gap-4">
-          <input name="marca" type="text" placeholder="Marca" required class="border p-3 rounded-xl" />
-          <input name="modelo" type="text" placeholder="Modelo" required class="border p-3 rounded-xl" />
-          <input name="anio" type="number" placeholder="Año" required class="border p-3 rounded-xl" />
-          <input name="version" type="text" placeholder="Versión" class="border p-3 rounded-xl" />
+          <label class="sr-only" for="marca">Marca</label>
+          <input id="marca" name="marca" type="text" placeholder="Marca" required class="border p-3 rounded-xl" />
+
+          <label class="sr-only" for="modelo">Modelo</label>
+          <input id="modelo" name="modelo" type="text" placeholder="Modelo" required class="border p-3 rounded-xl" />
+
+          <label class="sr-only" for="anio">Año</label>
+          <input id="anio" name="anio" type="number" inputmode="numeric" min="1950" max="2100" placeholder="Año" required class="border p-3 rounded-xl" />
+
+          <label class="sr-only" for="version">Versión</label>
+          <input id="version" name="version" type="text" placeholder="Versión" class="border p-3 rounded-xl" />
         </div>
         <div class="grid md:grid-cols-4 gap-4 mt-4">
-          <select name="transmision" required class="border p-3 rounded-xl">
+          <label class="sr-only" for="transmision">Transmisión</label>
+          <select id="transmision" name="transmision" required class="border p-3 rounded-xl">
             <option value="">Transmisión</option>
             <option>Manual</option>
             <option>Automática</option>
           </select>
-          <select name="combustible" required class="border p-3 rounded-xl">
+
+          <label class="sr-only" for="combustible">Combustible</label>
+          <select id="combustible" name="combustible" required class="border p-3 rounded-xl">
             <option value="">Combustible</option>
             <option>Bencina</option>
             <option>Diésel</option>
             <option>Híbrido</option>
             <option>Eléctrico</option>
           </select>
-          <input name="kilometraje" type="number" placeholder="Kilometraje" required class="border p-3 rounded-xl" />
-          <input name="patente" type="text" placeholder="Patente" required class="border p-3 rounded-xl" />
+
+          <label class="sr-only" for="kilometraje">Kilometraje</label>
+          <input id="kilometraje" name="kilometraje" type="number" inputmode="numeric" placeholder="Kilometraje" required class="border p-3 rounded-xl" />
+
+          <label class="sr-only" for="patente">Patente</label>
+          <input id="patente" name="patente" type="text" placeholder="Patente" required class="border p-3 rounded-xl" />
         </div>
       </section>
 
-      <!-- Datos personales -->
-      <section class="bg-white border rounded-2xl shadow-card p-6">
+      {/** Datos personales */}
+      <section class="bg-white border rounded-2xl shadow-card p-6 shadow-md">
         <h3 class="text-lg font-bold mb-4">2) Datos de contacto</h3>
         <div class="grid md:grid-cols-3 gap-4">
-          <input name="nombre" type="text" placeholder="Nombre y apellido" required class="border p-3 rounded-xl" />
-          <input name="whatsapp" type="tel" placeholder="WhatsApp" required class="border p-3 rounded-xl" />
-          <input name="email" type="email" placeholder="Correo electrónico" required class="border p-3 rounded-xl" />
+          <label class="sr-only" for="nombre">Nombre y apellido</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Nombre y apellido" required class="border p-3 rounded-xl" autocomplete="name" />
+
+          <label class="sr-only" for="whatsapp">WhatsApp</label>
+          <input id="whatsapp" name="whatsapp" type="tel" placeholder="WhatsApp" required class="border p-3 rounded-xl" autocomplete="tel" />
+
+          <label class="sr-only" for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="Correo electrónico" required class="border p-3 rounded-xl" autocomplete="email" />
         </div>
         <div class="grid md:grid-cols-2 gap-4 mt-4">
-          <input name="ciudad" type="text" placeholder="Ciudad" required class="border p-3 rounded-xl" />
-          <select name="cuandovender" required class="border p-3 rounded-xl">
-            <option value="">Cuándo vender</option>
+          <label class="sr-only" for="ciudad">Ciudad</label>
+          <input id="ciudad" name="ciudad" type="text" placeholder="Ciudad" required class="border p-3 rounded-xl" />
+
+          <label class="sr-only" for="cuandovender">Cuándo quieres vender</label>
+          <select id="cuandovender" name="cuandovender" required class="border p-3 rounded-xl">
+            <option value="" disabled selected hidden>Cuándo quieres vender</option>
             <option>Hoy</option>
             <option>1-3 días</option>
             <option>Esta semana</option>
@@ -62,15 +129,50 @@ const canonical = "https://tlocompro.cl/oferta";
           </select>
         </div>
         <div class="mt-4 text-xs text-gray-600">
-          Al enviar aceptas que la oferta será bajo mercado, a cambio de liquidez inmediata.
+          Al enviar aceptas que te hagamos una oferta para vender tu auto rápido, a cambio de dinero inmediato.
         </div>
       </section>
 
-      <button type="submit" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-soft">
+      <button type="submit" class="bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl shadow-md" aria-label="Enviar formulario y recibir oferta por tu auto">
         💸 Enviar y recibir oferta
       </button>
+
+      <div class="mt-4">
+        <a href="/" class="text-sm text-teal-600 hover:underline">Volver a inicio</a>
+      </div>
     </form>
+    <script>
+      const form = document.getElementById('formularioAuto');
+
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const formData = new FormData(form);
+
+        try {
+          const res = await fetch('/api/enviar', {
+            method: 'POST',
+            body: formData
+          });
+
+          if (res.ok) {
+            window.location.href = '/gracias';
+          } else {
+            alert('Ocurrió un error al enviar el formulario.');
+          }
+        } catch (err) {
+          alert('Error interno al enviar. Intenta nuevamente.');
+          console.error(err);
+        }
+      });
+    </script>
   </section>
 </BaseLayout>
+
+<style>
+  /* Estilo para ocultar etiquetas accesibles a lectores de pantalla */
+  .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+</style>
+
 
 

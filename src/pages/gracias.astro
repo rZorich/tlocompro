@@ -1,15 +1,57 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Gracias por confiar en Tlocompro | Tu oferta está en proceso";
+const description = "Hemos recibido los datos de tu vehículo. Nuestro equipo te contactará en breve con una oferta inmediata.";
+const canonical = "https://tlocompr o.cl/gracias";
+
+const ogImage = "https://tlocompro.cl/images/og-gracias.jpg";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": title,
+  "url": canonical,
+  "description": description,
+  "publisher": {
+    "@type": "Organization",
+    "name": "Tlocompro",
+    "url": "https://tlocompro.cl",
+    "logo": "https://tlocompro.cl/logo.png"
+  }
+};
 ---
 
-<BaseLayout title="Gracias">
-  <section class="max-w-xl mx-auto py-16 text-center">
-    <h1 class="text-4xl font-bold text-teal-600 mb-6">¡Gracias por tu solicitud!</h1>
-    <p class="text-lg text-gray-700 mb-4">
-      Hemos recibido los datos de tu vehículo. Nuestro equipo los revisará y te contactará muy pronto con una oferta.
+<BaseLayout {title} {description} {canonical}>
+  <Fragment slot="head">
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <section class="max-w-3xl mx-auto text-center py-20 px-6">
+    <h1 class="text-3xl md:text-4xl font-extrabold text-teal-700 mb-4">¡Gracias por confiar en nosotros!</h1>
+    <p class="text-gray-700 mb-8">
+      Hemos recibido la información de tu vehículo. Un asesor de <strong>Tlocompro</strong> te contactará muy pronto para entregarte una oferta personalizada.
     </p>
-    <a href="/" class="mt-6 inline-block px-6 py-3 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">
-      Volver al inicio
-    </a>
+
+    <div class="bg-white border rounded-2xl shadow-card p-6 inline-block">
+      <p class="text-lg font-semibold text-gray-900 mb-2">⏰ Tiempo estimado de respuesta:</p>
+      <p class="text-teal-700 font-bold text-xl">Menos de 24 horas hábiles</p>
+    </div>
+
+    <div class="mt-10">
+      <a href="/" class="bg-teal-600 hover:bg-teal-700 text-white font-semibold px-6 py-3 rounded-xl shadow-soft inline-flex items-center gap-2">
+        🔙 Volver al inicio
+      </a>
+    </div>
   </section>
 </BaseLayout>
+

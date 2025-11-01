@@ -1,0 +1,15 @@
+node_modules
+dist
+.astro
+.vercel
+.git
+.gitignore
+README.md
+package-lock.json
+*.md
+*.pdf
+*.zip
+*.rar
+*.psd
+*.ai
+*.bak

@@ -1,55 +1,169 @@
 ---
 import "../styles/global.css";
+
 const {
   title = "Tlocompro | Vende tu auto hoy",
-  description = "Oferta inmediata bajo el precio de mercado. Pago en el acto y retiro en 24 horas.",
-  canonical = "https://tlocompro.cl/" 
+  description = "Liquidez inmediata por tu auto, sin trámites ni esperas. Compramos y pagamos tu auto en 24 horas.",
+  canonical = "https://tlocompro.cl/"
 } = Astro.props;
 ---
-<html lang="es-CL" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{title}</title>
-    <meta name="description" content={description} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/favicon.ico" />
 
-    <!-- Tipografías -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<!doctype html>
+  <html lang="es-CL" class="scroll-smooth">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="robots" content="index, follow" />
+      <meta name="theme-color" content="#0d9488" />
 
-    <!-- JSON-LD Organization básico -->
-    <script type="application/ld+json">
-    {
-      "@context":"https://schema.org",
-      "@type":"Organization",
-      "name":"Tlocompro",
-      "url":"https://tlocompro.cl",
-      "logo":"https://tlocompro.cl/logo.png"
-    }
-    </script>
-  </head>
+      <title>{title}</title>
+      <meta name="description" content={description} />
+      <link rel="canonical" href={canonical} />
+
+      <!-- Open Graph -->
+      <meta property="og:title" content={title} />
+      <meta property="og:description" content={description} />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content={canonical} />
+      <meta property="og:image" content="https://tlocompro.cl/images/og-default.jpg" />
+
+      <!-- Redes sociales oficiales -->
+      <link rel="me" href="https://www.instagram.com/tlocompro_cl" />
+      <meta property="og:see_also" content="https://www.instagram.com/tlocompro_cl" />
+      <meta property="og:see_also" content="https://www.facebook.com/Tlocompro.cl/" />
+
+      <!-- Twitter Cards -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content="https://tlocompro.cl/images/og-default.jpg" />
+
+      <!-- Favicon -->
+      <link rel="icon" href="/favicon.ico" />
+
+      <!-- 🔹 OPTIMIZACIÓN DE FUENTES -->
+      <!-- Preconexión temprana a dominios de fuentes -->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+      <!-- 🔹 Carga no bloqueante de Google Fonts -->
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style">
+      <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+        rel="stylesheet"
+        media="print"
+        onload="this.media='all'"
+      >
+      <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+      </noscript>
+      <link
+        rel="stylesheet"
+        href="/_astro/como-funciona.Dags9iBw.css"
+        media="print"
+        onload="this.media='all'"
+      >
+      <noscript>
+        <link rel="stylesheet" href="/_astro/como-funciona.Dags9iBw.css">
+      </noscript>
+
+      <!-- 🔹 PRELOAD DE CSS LOCAL (ACELERA LCP) -->
+      <link rel="preload" href="/_astro/como-funciona.Dags9iBw.css" as="style">
+      <!-- 🔹 CARGA DIFERIDA -->
+      <link
+        rel="stylesheet"
+        href="/_astro/como-funciona.Dags9iBw.css"
+        media="print"
+        onload="this.media='all'"
+      >
+      <noscript>
+        <link rel="stylesheet" href="/_astro/como-funciona.Dags9iBw.css">
+      </noscript>
+
+      <!-- 🔹 PRELOAD DE IMAGEN PRINCIPAL (LOGO) -->
+      <link rel="preload" as="image" href="/logo_Tlocompro.webp" type="image/webp" fetchpriority="high">
+
+      <!-- JSON-LD: Organización y negocio -->
+      <script type="application/ld+json" set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Tlocompro",
+        "url": "https://tlocompro.cl",
+        "logo": "https://tlocompro.cl/logo_Tlocompro.webp",
+        "sameAs": [
+          "https://tlocompro.cl",
+          "https://www.instagram.com/tlocompro_cl",
+          "https://www.facebook.com/tlocompro.cl"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+56-9-XXXX-XXXX",
+          "contactType": "customer service",
+          "areaServed": "CL",
+          "availableLanguage": ["Spanish"]
+        }
+      })} />
+
+      <!-- Slot para metas y scripts adicionales -->
+      <slot name="head" />
+
+      <!-- 🔹 Google Analytics 4 diferido -->
+      <script>
+        // @ts-ignore
+        let analyticsLoaded = false;
+        function loadGA4() {
+          if (analyticsLoaded) return;
+          analyticsLoaded = true;
+
+          const s = document.createElement('script');
+          s.src = "https://www.googletagmanager.com/gtag/js?id=G-N0DXKQ4V53";
+          s.async = true;
+          document.head.appendChild(s);
+
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-N0DXKQ4V53', { send_page_view: true });
+        }
+
+        // Carga GA4 sólo cuando el usuario interactúe
+        window.addEventListener('scroll', loadGA4, { once: true });
+        window.addEventListener('mousemove', loadGA4, { once: true });
+      </script>
+
+    </head>
+
+
   <body class="min-h-screen bg-white text-gray-900 font-sans">
     <!-- NAVBAR -->
     <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100">
       <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         <a href="/" class="flex items-center gap-2">
-          <img src="/logo-Tlocompro.png" alt="Tlocompro" class="h-15 w-auto" loading="lazy" />
-          <span class="text-lg font-extrabold tracking-tight text-gray-900"></span>
+          <picture>
+            <!-- Versión moderna y liviana -->
+            <source srcset="/logo_Tlocompro.webp" type="image/webp" />
+            <!-- Fallback PNG para compatibilidad -->
+            <img
+              src="/logo_Tlocompro.webp"
+              alt="Logo de Tlocompro, compramos tu auto usado en Chile"
+              width="389"
+              height="70"
+              class="h-10 w-auto"
+              loading="eager"
+              decoding="async"
+              fetchpriority="high"
+            />
+          </picture>
         </a>
+
         <div class="hidden md:flex items-center gap-6">
           <a href="/como-funciona" class="text-sm font-semibold hover:text-teal-700">Cómo funciona</a>
           <a href="/preguntas-frecuentes" class="text-sm font-semibold hover:text-teal-700">Preguntas</a>
-          <a href="/oferta" class="inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-soft">
+          <a href="/oferta" class="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-md">
             💸 Recibir oferta
           </a>
         </div>
-        <a href="/oferta" class="md:hidden inline-flex items-center gap-2 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold px-4 py-2 rounded-xl">
+        <a href="/oferta" class="md:hidden inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold px-4 py-2 rounded-xl">
           Oferta
         </a>
       </nav>
@@ -65,12 +179,21 @@ const {
       <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
         <div>
           <div class="flex items-center gap-2 mb-3">
-            <img src="/logo-Tlocompro.png" alt="Tlocompro" class="h-8 w-auto" loading="lazy" />
+            <img
+              src="/logo_Tlocompro.webp"
+              alt="Logo de Tlocompro"
+              width="389"
+              height="70"
+              class="h-8 w-auto"
+              loading="lazy"
+              decoding="async"
+            />
           </div>
-          <p class="text-sm text-gray-600">Compramos vehículos usados rápido, seguro y con pago inmediato.</p>
+          <p class="text-sm text-gray-600">Compramos tu auto rápido, seguro y con pago inmediato.</p>
         </div>
+
         <div>
-          <h4 class="font-bold mb-3">Enlaces</h4>
+          <h3 class="font-bold mb-3">Enlaces</h3>
           <ul class="space-y-2 text-sm">
             <li><a href="/como-funciona" class="hover:text-teal-700">Cómo funciona</a></li>
             <li><a href="/preguntas-frecuentes" class="hover:text-teal-700">Preguntas frecuentes</a></li>
@@ -78,17 +201,30 @@ const {
             <li><a href="/terminos" class="hover:text-teal-700">Términos</a></li>
           </ul>
         </div>
+
         <div>
-          <h4 class="font-bold mb-3">Contacto</h4>
+          <h3 class="font-bold mb-3">Contacto</h3>
           <ul class="space-y-2 text-sm">
             <li>WhatsApp: +56 9 XXXXXXXX</li>
-            <li>Email: contacto@tlocompro.cl</li>
+            <li>Email: <a href="mailto:contacto@tlocompro.cl" class="hover:text-teal-700">contacto@tlocompro.cl</a></li>
             <li>Santiago, Chile</li>
           </ul>
         </div>
       </div>
-      <div class="text-center text-xs text-gray-500 pb-8">© {new Date().getFullYear()} Tlocompro.cl — Todos los derechos reservados</div>
+      <div class="text-center text-xs text-gray-500 pb-4">
+        <div class="mt-4 flex justify-center gap-4 text-sm">
+          <a href="https://www.instagram.com/tlocompro_cl" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Instagram" class="hover:text-teal-700 flex items-center gap-2">
+            📸 Instagram
+          </a>
+          <a href="https://www.facebook.com/tlocompro.cl" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Facebook" class="hover:text-teal-700 flex items-center gap-2">
+            👍 Facebook
+          </a>
+        </div>
+      <div class="text-center text-xs text-gray-500 pb-8">
+        © {new Date().getFullYear()} Tlocompro.cl — Todos los derechos reservados
+      </div>
     </footer>
   </body>
 </html>
+
 

@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const title = "Términos y Condiciones | Tlocompro Chile";
+const description = "Consulta los términos de uso del servicio Tlocompro. Condiciones de compra, tasación y compromisos legales.";
+const canonical = "https://tlocompro.cl/terminos";
+---
+<BaseLayout {title} {description} {canonical}>
+<section class="max-w-4xl mx-auto px-4 py-12">
+<h1 class="text-3xl font-extrabold mb-6">Términos y Condiciones</h1>
+<p class="text-gray-700 mb-4">
+El uso del servicio Tlocompro implica la aceptación de las siguientes condiciones:
+</p>
+<ol class="list-decimal list-inside text-gray-700 space-y-3">
+<li>La oferta entregada es referencial, no vinculante, y sujeta a revisión presencial o documental.</li>
+<li>Solo compramos vehículos que estén a nombre del vendedor y sin cargas legales.</li>
+<li>La firma se realiza en notaría y el pago se efectúa el mismo día vía transferencia electrónica.</li>
+<li>El usuario declara que la información entregada en el formulario es veraz.</li>
+<li>Nos reservamos el derecho de rechazar una operación sin expresión de causa.</li>
+</ol>
+<p class="mt-4 text-sm text-gray-600">Versión vigente desde octubre 2025</p>
+</section>
+</BaseLayout>

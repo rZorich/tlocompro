@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Evita indexar archivos innecesarios
+Disallow: /api/
+Disallow: /_astro/
+
+# Indica dónde está el sitemap
+Sitemap: https://tlocompro.cl/sitemap.xml
