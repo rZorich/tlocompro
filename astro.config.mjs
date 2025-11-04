@@ -1,3 +1,4 @@
+console.log('🚀 Build iniciado...');
 
 // @ts-check
 import { defineConfig } from 'astro/config';

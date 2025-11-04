@@ -3,6 +3,15 @@ import { defineConfig } from 'tailwindcss'
 
 export default defineConfig({
   content: ['./src/**/*.{astro,html,js,jsx,ts,tsx,vue}'],
+  safelist: [
+    'como-funciona',          // ⚠️ nombre que da origen al CSS hash
+    'text-gray-700',
+    'bg-gray-100',
+    'shadow-soft',
+    'shadow-card',
+    'font-bold',
+    'text-red-600'
+  ],
   theme: {
     extend: {
       fontFamily: {
