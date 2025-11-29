@@ -1,63 +1,64 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Vende tu auto en 24 horas | Pago inmediato y sin trámites | Tlocompro";
-const description = "Recibe una oferta inmediata y pago en el acto. En Tlocompro compramos tu auto en 24 horas, sin publicar ni perder tiempo. Servicio rápido, seguro y transparente.";
+const title = "Compramos tu auto en 24 horas | Pago inmediato | Tlocompro";
+const description =
+  "Compramos tu auto en 24 horas con pago inmediato y retiro a domicilio. Recibe una oferta rápida sin trámites ni publicaciones. Liquidez segura y sin complicaciones.";
 ---
 
 <BaseLayout {title} {description}>
 
-  <!-- Datos estructurados -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoDealer",
-    "name": "Tlocompro",
-    "image": "https://tlocompro.cl/vender_mi_auto.png",
-    "url": "https://tlocompro.cl",
-    "description": "Compramos tu auto con pago y retiro en 24 horas en todo Chile.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "CL"
-    },
-    "areaServed": "Chile",
-    "sameAs": [
-      "https://www.instagram.com/tlocompro",
-      "https://www.facebook.com/tlocompro"
-    ]
-  }
-  </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "name": "Tlocompro",
+  "image": "https://tlocompro.cl/compramos-tu-auto.webp",
+  "url": "https://tlocompro.cl",
+  "description": "En Tlocompro compramos tu auto en 24 horas con pago inmediato, retiro a domicilio y servicio seguro en todo Chile.",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "CL"
+  },
+  "areaServed": "Chile",
+  "sameAs": [
+    "https://www.instagram.com/tlocompro",
+    "https://www.facebook.com/tlocompro"
+  ]
+}
+</script>
 
-  <!-- HERO centrado -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-hero-gradient"></div>
-    <div class="absolute inset-0 bg-radial-dots bg-dots opacity-30"></div>
+<!-- HERO -->
+<section class="relative overflow-hidden">
+  <div class="absolute inset-0 bg-hero-gradient"></div>
+  <div class="absolute inset-0 bg-radial-dots bg-dots opacity-30"></div>
 
-    <div class="relative max-w-6xl mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-16 md:min-h-screen md:flex md:items-center md:gap-12">
+  <div class="relative max-w-6xl mx-auto px-4 pt-16 pb-10 md:pt-24 md:pb-16 md:min-h-screen md:flex md:items-center md:gap-12">
+    
+    <div class="max-w-3xl md:w-1/2">
+           <!-- BADGE / ETIQUETA SUPERIOR -->
+    <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 shadow-md rounded-full bg-teal-100 text-teal-700 border border-teal-200 mx-auto md:mx-0">
+      ⚡ Liquidez inmediata · ¡Vende tu auto hoy mismo!
+    </div>
+        <!-- H1 -->
+      <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
+        Compramos tu auto <span class="text-teal-700">hoy</span>.
+        <br />Pago inmediato <span class="text-teal-700">sin trámites ni esperas.</span>
+      </h1>
 
-      <!-- TEXTO -->
-      <div class="max-w-3xl md:w-1/2">
-        <span class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 shadow-md rounded-full bg-teal-100 text-teal-700 border border-teal-200">
-          ⚡ Liquidez inmediata · ¡Vende tu auto hoy mismo!
-        </span>
+      <p class="mt-4 text-lg text-gray-700 max-w-2xl">
+        En <strong>Tlocompro</strong> compramos tu auto en menos de 24 horas, con pago inmediato y sin trámites. 
+        Si necesitas liquidez rápida, este es el servicio más simple, seguro y transparente para vender tu auto sin publicar ni perder tiempo.
+      </p>
 
-        <h1 class="mt-4 text-4xl md:text-6xl font-extrabold leading-tight tracking-tight">
-          Vende tu auto <span class="text-teal-700">hoy</span>.
-          <br />Oferta inmediata <span class="text-teal-700">sin trámites ni esperas.</span>
-        </h1>
-
-        <p class="mt-4 text-lg text-gray-700 max-w-2xl">
-          ¿Necesitas vender tu auto rápido? <strong>En Tlocompro</strong> compramos tu auto en menos de 24 horas. Sin trámites, sin publicación y con pago inmediato.
-        </p>
-
-        <div class="mt-6 flex flex-wrap items-center gap-3">
-          <a href="/oferta" class="shadow-md inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl shadow-card" aria-label="Recibir oferta rápida por mi auto">
-            💸 Recibir oferta rápida
-          </a>
-          <a href="/como-funciona" class="shadow-md inline-flex items-center gap-2 px-6 py-3 rounded-xl border font-semibold hover:border-teal-600 hover:text-teal-700" aria-label="Ver cómo funciona Tlocompro">
-            ¿Cómo funciona?
-          </a>
-        </div>
+      <div class="mt-6 flex flex-wrap items-center gap-3">
+        <a href="/oferta" class="shadow-md inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white font-semibold px-6 py-3 rounded-xl shadow-card">
+          💸 Quiero vender mi auto ahora
+        </a>
+        <a href="/como-funciona" class="shadow-md inline-flex items-center gap-2 px-6 py-3 rounded-xl border font-semibold hover:border-teal-600 hover:text-teal-700">
+          ¿Cómo funciona?
+        </a>
+      </div>
 
         <!-- Aviso -->
         <div class="mt-6 max-w-xl bg-yellow-50 border border-yellow-200 rounded-xl p-4 shadow-md">
@@ -88,12 +89,13 @@ const description = "Recibe una oferta inmediata y pago en el acto. En Tlocompro
       <!-- IMAGEN -->
       <div class="hidden md:block md:w-1/2">
         <img 
-          src="/vender_mi_auto.png" 
-          alt="Cliente feliz vendiendo su auto a Tlocompro con pago inmediato" 
-          width="600" height="400"
+          src="/compramos-tu-auto.webp" 
+          alt="Compramos tu auto en 24 horas con pago inmediato y retiro a domicilio en Chile"
+          width="900" 
+          height="600"
           class="w-full max-w-md rounded-2xl shadow-md mx-auto"
-          loading="lazy"
-          decoding="async"
+          loading="eager"
+          fetchpriority="high"
         />
       </div>
     </div>
@@ -101,37 +103,87 @@ const description = "Recibe una oferta inmediata y pago en el acto. En Tlocompro
 
   <!-- PASOS -->
   <section class="max-w-6xl mx-auto px-4 mt-12 md:mt-16">
-    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Cómo funciona el proceso para vender tu auto</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">
+      ¿Cómo compramos tu auto en menos de 24 horas?
+    </h2>
+
     <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- Paso 1 -->
       <div class="p-6 border rounded-2xl bg-white shadow-md">
         <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">1</div>
-        <h3 class="font-bold mb-1">Envíanos los datos de tu auto</h3>
-        <p class="text-gray-600 text-sm">Marca, modelo, año, km, comuna y fotos. <a href="/oferta" class="text-teal-700 hover:underline">Envía los datos del auto que quieres vender aquí</a>.</p>
+        <h3 class="font-bold mb-1">Cuéntanos sobre tu auto</h3>
+        <p class="text-gray-600 text-sm">
+          Ingresa marca, modelo, año, kilómetros y tu comuna. 
+          Puedes subir fotos para agilizar la oferta.  
+          <a href="/oferta" class="text-teal-700 hover:underline">Enviar datos ahora</a>.
+        </p>
       </div>
+
+      <!-- Paso 2 -->
       <div class="p-6 border rounded-2xl bg-white shadow-md">
         <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">2</div>
-        <h3 class="font-bold mb-1">Recibe nuestra oferta por tu auto</h3>
-        <p class="text-gray-600 text-sm">Te hacemos una propuesta de precio, si la aceptas, <strong>compramos tu auto inmediatamente</strong>.</p>
+        <h3 class="font-bold mb-1">Recibe nuestra oferta</h3>
+        <p class="text-gray-600 text-sm">
+          Te enviamos una propuesta basada en una tasación profesional.  
+          Si aceptas, <strong>compramos tu auto inmediatamente</strong>.
+        </p>
       </div>
+
+      <!-- Paso 3 -->
       <div class="p-6 border rounded-2xl bg-white shadow-md">
         <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">3</div>
-        <h3 class="font-bold mb-1">Te pagamos y retiramos tu auto en 24 h</h3>
-        <p class="text-gray-600 text-sm">Firma en notaría, transferencia y retiro el mismo día.</p>
+        <h3 class="font-bold mb-1">Pago inmediato y retiro en 24 h</h3>
+        <p class="text-gray-600 text-sm">
+          Coordinamos firma en notaría y realizamos la transferencia al instante.  
+          Retiramos tu auto donde tú estés.
+        </p>
       </div>
+
     </div>
   </section>
 
   <!-- TESTIMONIO -->
-  <section class="max-w-6xl mx-auto px-4 mt-12">
-    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">Opiniones de quienes ya vendieron su auto con nosotros</h2>
+  <section class="max-w-6xl mx-auto px-4 mt-12 md:mt-20">
+    <h2 class="text-2xl md:text-3xl font-bold mb-6 text-center">
+      Personas que ya confiaron en Tlocompro
+    </h2>
+
     <div class="p-6 md:p-8 bg-white border rounded-2xl shadow-card shadow-md">
       <p class="text-gray-700 text-lg leading-relaxed">
-        “Necesitaba vender mi auto urgente. Tlocompro me hizo una oferta clara y me compraron el auto en menos de un día.
-        100% recomendado si buscas liquidez y vender tu auto rápido.”
+        “Necesitaba vender mi auto urgente y no tenía tiempo de publicarlo.  
+        En menos de un día Tlocompro me hizo una oferta justa y <strong>compraron mi auto con pago inmediato</strong>.  
+        El proceso fue rápido, seguro y totalmente transparente. 100% recomendado.”
       </p>
+
       <div class="mt-4 text-sm text-gray-600">— Javier R., Santiago</div>
     </div>
   </section>
+
+  <section class="max-w-6xl mx-auto px-4 mt-16 mb-12 text-gray-700 text-sm leading-relaxed">
+    <h2 class="text-xl font-bold mb-3">Servicio profesional de compra de autos en Chile</h2>
+    <p class="mb-3">
+      En Tlocompro <strong>compramos tu auto</strong> en menos de 24 horas con un proceso rápido, seguro y sin trámites.
+      Nuestro servicio está diseñado para personas que necesitan vender su vehículo sin complicaciones, sin publicar en plataformas y sin esperar semanas por compradores.
+    </p>
+    <p class="mb-3">
+      Compramos autos de diferentes marcas, modelos y años, con una evaluación transparente y un pago inmediato mediante transferencia electrónica.
+      Coordinamos firma en notaría y retiro del vehículo donde te encuentres.
+    </p>
+    <p>
+      Si estás buscando una alternativa confiable y rápida para vender tu auto hoy mismo, Tlocompro es la opción más eficiente en Chile.
+    </p>
+  </section>
+  <section class="max-w-6xl mx-auto px-4 mt-12 mb-12 text-center text-gray-700 text-sm">
+    <p>
+      Si tienes alguna duda o quieres saber si compramos tu auto, revisa nuestra 
+      <a href="/preguntas-frecuentes" class="text-teal-700 underline hover:text-teal-800">
+        sección de preguntas frecuentes
+      </a>.
+    </p>
+  </section>
+  
+
 
 </BaseLayout>
 

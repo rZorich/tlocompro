@@ -1,21 +1,24 @@
 export async function GET() {
   const base = 'https://tlocompro.cl';
+
   const pages = [
-    '/',
-    '/como-funciona',
-    '/preguntas-frecuentes',
-    '/oferta',
-    '/gracias',
-    '/privacidad',
-    '/terminos'
+    { path: '/', priority: '1.0' },
+    { path: '/como-funciona', priority: '0.9' },
+    { path: '/preguntas-frecuentes', priority: '0.9' },
+    { path: '/automotoras', priority: '0.9' },
+    { path: '/contacto-automotoras', priority: '0.8' },
+    { path: '/oferta', priority: '0.8' },
+    { path: '/gracias', priority: '0.3' },
+    { path: '/privacidad', priority: '0.2' },
+    { path: '/terminos', priority: '0.2' }
   ];
 
   const urls = pages.map(
-    (path) => `
+    ({ path, priority }) => `
     <url>
       <loc>${base}${path}</loc>
       <changefreq>weekly</changefreq>
-      <priority>${path === '/' ? '1.0' : '0.8'}</priority>
+      <priority>${priority}</priority>
     </url>`
   );
 
@@ -31,3 +34,4 @@ export async function GET() {
     }
   );
 }
+

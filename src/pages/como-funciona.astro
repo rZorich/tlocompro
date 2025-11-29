@@ -1,22 +1,80 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const title = "¿Cómo funciona Tlocompro? | Venta de autos en 24 horas";
-const description = "Conoce el proceso simple y transparente de Tlocompro para vender tu auto usado. Evaluación inmediata, firma notarial y pago el mismo día.";
+
+const title = "Quiero vender mi auto rápido | Cómo funciona Tlocompro";
+const description =
+  "¿Quieres vender tu auto rápido? En Tlocompro te ofrecemos una tasación profesional, oferta en menos de 24 horas, firma en notaría y pago inmediato. Vende tu auto hoy sin trámites ni demoras.";
 const canonical = "https://tlocompro.cl/como-funciona";
 ---
+
 <BaseLayout {title} {description} {canonical}>
-<section class="max-w-4xl mx-auto px-4 py-12">
-<h1 class="text-3xl font-extrabold mb-6">¿Cómo funciona Tlocompro?</h1>
-<p class="text-lg text-gray-700 mb-4">
-En <strong>Tlocompro</strong>, simplificamos la venta de tu vehículo usado. Podemos comprar tu auto durante el mismo día. Nuestro proceso está diseñado para quienes necesitan liquidez inmediata y vender su auto sin complicaciones no demoras.
-</p>
-<ol class="list-decimal list-inside text-gray-700 space-y-3">
-<li>Completa el formulario con los datos de tu auto y tu contacto.</li>
-<li>Recibe una oferta en menos de 24 horas, basada en una tasación profesional. Esta oferta es a la que compramos tu auto (sujeta a revisión de documentos y estado del auto).</li>
-<li>Coordinamos firma en notaría y retiro del vehículo en la comuna que indiques.</li>
-<li>Pagamos de inmediato vía transferencia electrónica segura.</li>
-<li>Y listo, ¡ya vendiste tu auto!</li>
-</ol>
-<p class="mt-6 text-gray-600 text-sm">Tlocompro es ideal para quienes priorizan rapidez, transparencia y un servicio profesional al vender su auto.</p>
+
+<section class="max-w-5xl mx-auto px-4 py-12">
+
+  <!-- H1 SOLO, A LO ANCHO -->
+  <h1 class="text-3xl font-extrabold mb-8 leading-tight">
+    Quiero vender mi auto: ¿Cómo funciona Tlocompro?
+  </h1>
+
+  <!-- BLOQUE 1: TEXTO INTRODUCTORIO + IMAGEN -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+    <!-- TEXTO INTRODUCTORIO -->
+    <div>
+      <p class="text-lg text-gray-700 mb-4">
+        Todo comienza con una necesidad clara: “quiero vender mi auto rápido”.
+        Quizás te vas de viaje, necesitas liquidez por una urgencia o simplemente no quieres
+        pasar semanas intentando venderlo por tu cuenta.
+      </p>
+
+      <p class="text-lg text-gray-700 mb-6">
+        En <strong>Tlocompro</strong> hacemos que el proceso sea simple, seguro y rápido.
+        Podemos comprar tu vehículo el mismo día. Nuestro servicio está diseñado
+        para quienes necesitan vender sin complicaciones ni demoras.
+      </p>
+
+      <!-- BOTÓN CTA -->
+      <a 
+        href="/oferta"
+        class="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-200"
+      >
+        Quiero vender mi auto ahora
+      </a>
+    </div>
+
+    <!-- IMAGEN AL LADO DEL TEXTO INTRODUCTORIO -->
+    <div class="flex justify-center">
+      <img
+        src="/vender-mi-auto-rapido.webp"
+        alt="Cómo vender mi auto rápido con Tlocompro"
+        class="rounded-xl shadow-lg w-full max-w-md"
+        loading="eager"
+      />
+    </div>
+
+  </div>
+
+  <!-- BLOQUE 2: PASO A PASO SIN IMAGEN AL LADO -->
+  <div class="mt-16">
+    <h2 class="text-2xl font-bold mb-4">Pasos para vender tu auto con Tlocompro</h2>
+
+    <ol class="list-decimal list-inside text-gray-700 space-y-3">
+      <li>Completa el formulario con los datos de tu auto y tu contacto.</li>
+      <li>
+        Recibe una oferta en menos de 24 horas, basada en una tasación profesional.
+        Esta es la oferta real de compra (sujeta a revisión del vehículo y sus documentos).
+      </li>
+      <li>Coordinamos firma en notaría y retiro del auto en la comuna que indiques.</li>
+      <li>Realizamos el pago inmediato mediante transferencia electrónica segura.</li>
+      <li>Y listo, ¡ya vendiste tu auto!</li>
+    </ol>
+
+    <p class="mt-6 text-gray-600 text-sm">
+      Tlocompro es ideal para quienes priorizan rapidez, transparencia y un servicio profesional al vender su auto.
+    </p>
+  </div>
+
 </section>
+
 </BaseLayout>
+

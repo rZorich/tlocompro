@@ -105,7 +105,7 @@ const {
         ],
         "contactPoint": {
           "@type": "ContactPoint",
-          "telephone": "+56-9-XXXX-XXXX",
+          "telephone": "+56 9 5817 0156",
           "contactType": "customer service",
           "areaServed": "CL",
           "availableLanguage": ["Spanish"]
@@ -144,38 +144,108 @@ const {
 
   <body class="min-h-screen bg-white text-gray-900 font-sans">
     <!-- NAVBAR -->
-    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur border-b border-gray-100">
-      <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-        <a href="/" class="flex items-center gap-2">
-          <picture>
-            <!-- Versión moderna y liviana -->
-            <source srcset="/logo_Tlocompro.webp" type="image/webp" />
-            <!-- Fallback PNG para compatibilidad -->
-            <img
-              src="/logo_Tlocompro.webp"
-              alt="Logo de Tlocompro, compramos tu auto usado en Chile"
-              width="389"
-              height="70"
-              class="h-10 w-auto"
-              loading="eager"
-              decoding="async"
-              fetchpriority="high"
-            />
-          </picture>
-        </a>
+    <header class="w-full border-b border-gray-200 bg-white">
+  <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
 
-        <div class="hidden md:flex items-center gap-6">
-          <a href="/como-funciona" class="text-sm font-semibold hover:text-teal-700">Cómo funciona</a>
-          <a href="/preguntas-frecuentes" class="text-sm font-semibold hover:text-teal-700">Preguntas</a>
-          <a href="/oferta" class="inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold px-4 py-2 rounded-xl shadow-md">
-            💸 Recibir oferta
-          </a>
-        </div>
-        <a href="/oferta" class="md:hidden inline-flex items-center gap-2 bg-teal-700 hover:bg-teal-800 text-white text-sm font-semibold px-4 py-2 rounded-xl">
-          Oferta
+    <!-- LOGO -->
+    <a href="/" class="flex items-center gap-2">
+      <img 
+        src="/logo_Tlocompro.webp"
+        alt="Tlocompro"
+        width="389"
+        height="70"
+        class="h-8 w-auto"
+        loading="lazy"
+        decoding="async"
+      />
+    </a>
+
+    <!-- MENÚ DESKTOP -->
+    <nav class="hidden md:flex items-center gap-8 text-sm font-medium">
+
+      <a href="/como-funciona" class="hover:text-teal-700 transition">
+        Cómo funciona
+      </a>
+
+      <a href="/preguntas-frecuentes" class="hover:text-teal-700 transition">
+        Preguntas frecuentes
+      </a>
+
+      <!-- AUTOMOTORAS DESTACADO -->
+      <a 
+        href="/automotoras" 
+        class="text-teal-700 font-semibold hover:text-teal-800 transition"
+      >
+        Automotoras
+      </a>
+
+      <!-- CTA -->
+      <a 
+        href="/oferta"
+        class="bg-teal-700 hover:bg-teal-800 text-white px-5 py-2 rounded-xl shadow-md transition"
+      >
+        Recibir oferta rápida
+      </a>
+
+    </nav>
+
+    <!-- MENÚ MOBILE (botón hamburguesa) -->
+    <button id="menuBtn" class="md:hidden flex items-center text-gray-700">
+      <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- MENÚ MOBILE DESPLEGABLE -->
+  <nav id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-white">
+    <ul class="flex flex-col py-4 px-4 text-sm font-medium">
+
+      <li>
+        <a href="/como-funciona" class="py-2 block hover:text-teal-700">
+          Cómo funciona
         </a>
-      </nav>
-    </header>
+      </li>
+
+      <li>
+        <a href="/preguntas-frecuentes" class="py-2 block hover:text-teal-700">
+          Preguntas frecuentes
+        </a>
+      </li>
+
+      <!-- AUTOMOTORAS DESTACADO EN MOBILE -->
+      <li>
+        <a 
+          href="/automotoras" 
+          class="py-2 block text-teal-700 font-semibold hover:text-teal-800"
+        >
+          Automotoras
+        </a>
+      </li>
+
+      <!-- CTA MOBILE -->
+      <li class="mt-2">
+        <a 
+          href="/oferta"
+          class="block text-center bg-teal-700 hover:bg-teal-800 text-white px-4 py-3 rounded-xl shadow-md"
+        >
+          Recibir oferta rápida
+        </a>
+      </li>
+
+    </ul>
+  </nav>
+
+  <!-- SCRIPT MENU MOBILE -->
+  <script>
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+    });
+  </script>
+</header>
 
     <!-- CONTENIDO -->
     <main>
@@ -183,8 +253,10 @@ const {
     </main>
 
     <!-- FOOTER -->
-    <footer class="mt-20 border-t border-gray-100">
-      <div class="max-w-6xl mx-auto px-4 py-10 grid md:grid-cols-3 gap-8">
+    <footer class="bg-[#121212] text-white py-12 mt-16 border-t border-gray-800">
+      <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-12">
+
+        <!-- COLUMNA 1 – LOGO + TEXTO -->
         <div>
           <div class="flex items-center gap-2 mb-3">
             <img
@@ -197,41 +269,57 @@ const {
               decoding="async"
             />
           </div>
-          <p class="text-sm text-gray-600">Compramos tu auto rápido, seguro y con pago inmediato.</p>
+
+          <p class="text-sm text-gray-300">
+            Compramos tu auto rápido, seguro y con pago inmediato.
+          </p>
         </div>
 
+        <!-- COLUMNA 2 – ENLACES (incluye Automotoras) -->
         <div>
-          <h3 class="font-bold mb-3">Enlaces</h3>
-          <ul class="space-y-2 text-sm">
-            <li><a href="/como-funciona" class="hover:text-teal-700">Cómo funciona</a></li>
-            <li><a href="/preguntas-frecuentes" class="hover:text-teal-700">Preguntas frecuentes</a></li>
-            <li><a href="/privacidad" class="hover:text-teal-700">Privacidad</a></li>
-            <li><a href="/terminos" class="hover:text-teal-700">Términos</a></li>
+          <h3 class="font-semibold mb-3">Enlaces</h3>
+          <ul class="space-y-2 text-sm text-gray-200">
+            <li><a href="/como-funciona" class="hover:text-white transition">Cómo funciona</a></li>
+            <li><a href="/preguntas-frecuentes" class="hover:text-white transition">Preguntas frecuentes</a></li>
+            <li><a href="/privacidad" class="hover:text-white transition">Privacidad</a></li>
+            <li><a href="/terminos" class="hover:text-white transition">Términos de uso</a></li>
+
+            <!-- NUEVO ENLACE PARA AUTOMOTORAS -->
+            <li class="pt-3 mt-3 border-t border-gray-700">
+              <a href="/automotoras" class="text-teal-400 font-semibold hover:text-teal-300 transition">
+                ¿Eres automotora?
+              </a>
+            </li>
           </ul>
         </div>
 
+        <!-- COLUMNA 3 – CONTACTO -->
         <div>
-          <h3 class="font-bold mb-3">Contacto</h3>
-          <ul class="space-y-2 text-sm">
-            <li>WhatsApp: +56 9 XXXXXXXX</li>
-            <li>Email: <a href="mailto:contacto@tlocompro.cl" class="hover:text-teal-700">contacto@tlocompro.cl</a></li>
-            <li>Santiago, Chile</li>
+          <h3 class="font-semibold mb-3">Contacto</h3>
+          <ul class="space-y-2 text-sm text-gray-300">
+            <li>
+              <span class="font-semibold">Email:</span>
+              <a href="mailto:contacto@tlocompro.cl" class="hover:text-white transition">
+                contacto@tlocompro.cl
+              </a>
+            </li>
+            <li>
+              <span class="font-semibold">Teléfono:</span>
+              <a href="tel:+56958170156" class="hover:text-white transition">
+                +569 5817 0156
+              </a>
+            </li>
           </ul>
         </div>
+
       </div>
-      <div class="text-center text-xs text-gray-500 pb-4">
-        <div class="mt-4 flex justify-center gap-4 text-sm">
-          <a href="https://www.instagram.com/tlocompro_cl" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Instagram" class="hover:text-teal-700 flex items-center gap-2">
-            📸 Instagram
-          </a>
-          <a href="https://www.facebook.com/tlocompro.cl" target="_blank" rel="noopener noreferrer" aria-label="Visita nuestro Facebook" class="hover:text-teal-700 flex items-center gap-2">
-            👍 Facebook
-          </a>
-        </div>
-      <div class="text-center text-xs text-gray-500 pb-8">
-        © {new Date().getFullYear()} Tlocompro.cl — Todos los derechos reservados
+
+      <!-- COPYRIGHT -->
+      <div class="text-center text-xs text-gray-400 mt-12">
+        © {new Date().getFullYear()} Tlocompro. Todos los derechos reservados.
       </div>
     </footer>
+
   </body>
 </html>
 

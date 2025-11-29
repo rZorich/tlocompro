@@ -1,33 +1,158 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-const title = "Preguntas frecuentes | Tlocompro Chile";
-const description = "Resuelve tus dudas sobre el servicio de compra de autos usados. Tasación, proceso de pago, retiro, documentación y más.";
+
+const title = "Cómo vender mi auto | Preguntas frecuentes Tlocompro";
+const description =
+  "Aprende cómo vender tu auto de forma rápida, segura y sin trámites. Respondemos las dudas más comunes: documentos necesarios, venta con deuda o prenda, pago inmediato, transferencia, notaría y más.";
 const canonical = "https://tlocompro.cl/preguntas-frecuentes";
 ---
+
 <BaseLayout {title} {description} {canonical}>
-<section class="max-w-4xl mx-auto px-4 py-12">
-<h1 class="text-3xl font-extrabold mb-6">Preguntas frecuentes</h1>
-<div class="space-y-6 text-gray-700">
-<div>
-<h2 class="font-semibold">¿Cuánto se demora el proceso completo para vender mi autp?</h2>
-<p>Solo depende de ti. Si nos envías los datos de tu auto y aceptas nuestra oferta, en menos de 24 horas hábiles puedes tener tu auto vendido, firmado y pagado.</p>
-</div>
-<div>
-<h2 class="font-semibold">¿Aceptan autos con multas o prendas?</h2>
-<p>Si, pero el proceso podría ser un poco más lento. De todas formas, evaluaremos en conjunto caso a caso y te haremos una oferta apropiada para comprar tu auto.</p>
-</div>
-<div>
-<h2 class="font-semibold">¿Dónde se firma?</h2>
-<p>Se firma en notaría, una vez que hemos llegado a acuerdo por la compra de tu auto.</p>
-</div>
-<div>
-<h2 class="font-semibold">¿Cómo se realiza el pago?</h2>
-<p>Vía transferencia electrónica inmediata, el mismo día de la firma. Una vez realizado el pago y firmada la compraventa, tu auto ya estará vendido.</p>
-</div>
-<div>
-<h2 class="font-semibold">¿Qué pasa si no acepto la oferta?</h2>
-<p>No hay compromiso. Solo tu decides si quieres vender rápido tu auto. El servicio de cotización es gratuito y sin obligación de venta. Solo si aceptas nuestra oferta, podremos comprar tu auto.</p>
-</div>
-</div>
+
+<section class="max-w-5xl mx-auto px-4 py-12">
+
+  <!-- H1 PRINCIPAL -->
+  <h1 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-6">
+    Cómo vender mi auto: preguntas frecuentes
+  </h1>
+
+  <p class="text-lg text-gray-700 mb-10">
+    Aquí encontrarás respuestas claras a las dudas más comunes que tienen las personas al momento de 
+    <strong>vender su auto</strong>. Si después de leer necesitas asistencia personalizada, 
+    siempre puedes <a href="/oferta" class="text-teal-700 underline hover:text-teal-800">pedir una oferta rápida</a>.
+  </p>
+
+  <!-- CATEGORÍA 1 -->
+  <h2 class="text-2xl font-bold mt-10 mb-4">Requisitos para vender tu auto</h2>
+
+  <div class="space-y-4 text-gray-700">
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Qué documentos necesito para vender mi auto?</summary>
+      <p class="mt-2 text-sm">
+        Necesitas tu carnet de identidad y los documentos del vehículo: padrón, revisión técnica, SOAP vigente
+        y permiso de circulación. Nosotros revisamos todo en notaría para asegurar una venta segura.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Puedo vender un auto que está a nombre de otra persona o empresa?</summary>
+      <p class="mt-2 text-sm">
+        Sí, siempre que cuentes con un poder notarial espefíco, otorgado por escritura pública, o que el propietario acuda a la firma.
+        No compramos autos que tengan un poder notarial simple.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Como vender mi auto si cuenta con deuda, prenda o crédito?</summary>
+      <p class="mt-2 text-sm">
+        Aquí el proceso podría ser un poco más lento. Pero si, en Tlocompro compramos autos con deuda o prenda bancaria. Liquidamos el monto pendiente en el banco y pagamos
+        la diferencia directamente a ti. Este proceso lo hacemos de manera segura y transparente.
+      </p>
+    </details>
+
+  </div>
+
+  <!-- CATEGORÍA 2 -->
+  <h2 class="text-2xl font-bold mt-12 mb-4">Cómo vender mi auto a Tlocompro</h2>
+
+  <div class="space-y-4 text-gray-700">
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Cómo vender mi auto de forma rápida y segura?</summary>
+      <p class="mt-2 text-sm">
+        La forma más rápida es evitar publicar en redes, evitar negociaciones largas y vender directamente 
+        a una empresa que compra autos. Al publicar tu auto y mostrarlo a caulquier persona que te llame, te expones innecesariamente. En Tlocompro podemos comprar tu auto en menos de 24 horas, 
+        con firma en notaría y pago inmediato.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Cómo funciona la venta en notaría?</summary>
+      <p class="mt-2 text-sm">
+        Coordinamos una cita en la notaría más cercana. Revisamos documentos, firmamos el contrato de compra 
+        y realizamos la transferencia al instante. Luego retiramos el vehículo donde tú estés.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Qué documentos revisan antes de comprar mi auto?</summary>
+      <p class="mt-2 text-sm">
+        Verificamos que el vehículo no tenga órdenes de embargo, multas TAG impagas, prohibiciones de venta 
+        o encargos policiales. Todo esto se revisa al momento de la firma en notaría.
+      </p>
+    </details>
+
+  </div>
+
+  <!-- CATEGORÍA 3 -->
+  <h2 class="text-2xl font-bold mt-12 mb-4">Autos que podemos comprar</h2>
+
+  <div class="space-y-4 text-gray-700">
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Como vender mi auto si está en mal estado?</summary>
+      <p class="mt-2 text-sm">
+        Sí, evaluamos autos con fallas mecánicas, problemas menores o reparaciones pendientes. 
+        Solo revisamos que el vehículo esté completo y con documentación al día.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Como vender mi auto si está chocado o siniestrado?</summary>
+      <p class="mt-2 text-sm">
+        Dependiendo del nivel del daño podemos hacer una oferta. En autos muy siniestrados, 
+        te ayudamos a obtener una evaluación transparente.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Qué marcas o modelos compran?</summary>
+      <p class="mt-2 text-sm">
+        Compramos autos de casi todas las marcas y modelos del mercado chileno, siempre que cuenten 
+        con documentación regular. También evaluamos vehículos con financiamiento vigente.
+      </p>
+    </details>
+
+  </div>
+
+  <!-- CATEGORÍA 4 -->
+  <h2 class="text-2xl font-bold mt-12 mb-4">Preguntas sobre el pago y el proceso final</h2>
+
+  <div class="space-y-4 text-gray-700">
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Cuándo se realiza el pago?</summary>
+      <p class="mt-2 text-sm">
+        El pago se realiza inmediatamente después de firmar en notaría, mediante transferencia electrónica 
+        segura. No trabajamos con cheques ni pagos diferidos.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Retiran el auto el mismo día?</summary>
+      <p class="mt-2 text-sm">
+        Sí. Retiramos tu vehículo en tu domicilio, o lo puedes acercar a la notaría donde realicemos el trámite de compra-venta.
+      </p>
+    </details>
+
+    <details class="p-4 border rounded-xl bg-white shadow-sm">
+      <summary class="font-semibold cursor-pointer">¿Qué pasa si tengo multas o TAG pendientes?</summary>
+      <p class="mt-2 text-sm">
+        Si las multas están anotadas en el Registro Civil, deben ser solucionadas antes de la firma. 
+        Si son multas no anotadas o de TAG, revisamos caso a caso.
+      </p>
+    </details>
+
+  </div>
+
+  <!-- CTA FINAL -->
+  <div class="mt-16 text-center">
+    <a href="/oferta" class="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-4 rounded-xl shadow-md">
+      💸 Quiero vender mi auto ahora
+    </a>
+  </div>
+
 </section>
+
 </BaseLayout>
