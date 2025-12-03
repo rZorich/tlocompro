@@ -1,10 +1,10 @@
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/_astro/automotoras:hash.css",
-      "destination": "/404",
-      "permanent": false
+      "destination": "/_astro/automotoras.css"
     }
   ]
 }
+
 
