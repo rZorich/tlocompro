@@ -7,4 +7,4 @@ https://github.com/TU-USUARIO/tlocompro
 
 4. git checkout "CODIGO HASH"
 
-5. git switch -c recuperado      <--- para trabajar desde la versión nueva recuperada
+5. git switch -c recuperado      <--- para trabajar desde la versión nueva recuperadagit 

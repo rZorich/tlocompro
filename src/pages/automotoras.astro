@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/automotoras-puro.css";
 
 const title = "Autos para automotoras | Captación profesional de vehículos en Chile";
 const description =
@@ -9,16 +10,18 @@ const canonical = "https://tlocompro.cl/automotoras";
 
 <BaseLayout {title} {description} {canonical}>
 
-<section class="max-w-6xl mx-auto px-4 py-12">
+<section class="page-container py-12">
+
 
   <!-- HERO -->
-  <section class="max-w-6xl mx-auto px-4 py-16 md:flex md:items-center md:gap-12">
+  <section class="page-container py-16 md:flex md:items-center md:gap-12">
+
 
   <!-- COLUMNA IZQUIERDA -->
   <div class="md:w-1/2">
 
     <!-- BADGE -->
-    <div class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 shadow-md rounded-full bg-teal-100 text-teal-700 border border-teal-200 mb-4">
+        <div class="badge-auto mb-4">
       🤝 Servicio para automotoras y concesionarios
     </div>
 
@@ -59,13 +62,14 @@ const canonical = "https://tlocompro.cl/automotoras";
 
 
 <!-- SECCIÓN: BENEFICIOS -->
-<section class="max-w-6xl mx-auto px-4 mt-16">
+<section class="page-container mt-16">
+
 
   <h2 class="text-2xl md:text-3xl font-bold mb-6">Ventajas de trabajar con Tlocompro</h2>
 
   <div class="grid md:grid-cols-3 gap-6">
 
-    <div class="p-6 border rounded-2xl bg-white shadow-sm">
+    <div class="card-box">
       <h3 class="font-bold mb-2">📈 Más autos para tu stock</h3>
       <p class="text-gray-600 text-sm">
         Recibimos diariamente solicitudes de personas que quieren vender su vehículo. 
@@ -73,7 +77,7 @@ const canonical = "https://tlocompro.cl/automotoras";
       </p>
     </div>
 
-    <div class="p-6 border rounded-2xl bg-white shadow-sm">
+    <div class="card-box">
       <h3 class="font-bold mb-2">🔍 Revisión documental completa</h3>
       <p class="text-gray-600 text-sm">
         Verificamos padrón, multas, deuda, prenda, encargo policial y revisión técnica. 
@@ -81,7 +85,7 @@ const canonical = "https://tlocompro.cl/automotoras";
       </p>
     </div>
 
-    <div class="p-6 border rounded-2xl bg-white shadow-sm">
+    <div class="card-box">
       <h3 class="font-bold mb-2">⏱️ Ahorro de tiempo</h3>
       <p class="text-gray-600 text-sm">
         No pierdas horas respondiendo mensajes o coordinando visitas. 
@@ -94,13 +98,14 @@ const canonical = "https://tlocompro.cl/automotoras";
 </section>
 
 <!-- SECCIÓN: CÓMO FUNCIONA -->
-<section class="max-w-6xl mx-auto px-4 mt-20">
+<section class="page-container mt-20">
+
 
   <h2 class="text-2xl md:text-3xl font-bold mb-6">Cómo funciona nuestro servicio para automotoras</h2>
 
   <div class="grid md:grid-cols-3 gap-6">
 
-    <div class="p-6 border rounded-2xl bg-white shadow-sm">
+    <div class="card-box">
       <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">1</div>
       <h3 class="font-bold mb-1">Recepción de vehículos</h3>
       <p class="text-gray-600 text-sm">
@@ -109,7 +114,7 @@ const canonical = "https://tlocompro.cl/automotoras";
       </p>
     </div>
 
-    <div class="p-6 border rounded-2xl bg-white shadow-sm">
+    <div class="card-box">
       <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">2</div>
       <h3 class="font-bold mb-1">Evaluación y revisión</h3>
       <p class="text-gray-600 text-sm">
@@ -118,7 +123,7 @@ const canonical = "https://tlocompro.cl/automotoras";
       </p>
     </div>
 
-    <div class="p-6 border rounded-2xl bg-white shadow-sm">
+    <div class="card-box">
       <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">3</div>
       <h3 class="font-bold mb-1">Entrega lista para venta</h3>
       <p class="text-gray-600 text-sm">
@@ -132,7 +137,8 @@ const canonical = "https://tlocompro.cl/automotoras";
 </section>
 
 <!-- SECCIÓN: POR QUÉ ELEGIRNOS -->
-<section class="max-w-6xl mx-auto px-4 mt-20">
+<section class="page-container mt-20">
+
 
   <h2 class="text-2xl md:text-3xl font-bold mb-6">¿Por qué elegirnos como proveedor de autos?</h2>
 
@@ -154,7 +160,7 @@ const canonical = "https://tlocompro.cl/automotoras";
 </section>
 
 <!-- CTA FINAL -->
-<section class="max-w-6xl mx-auto px-4 mt-20 mb-20 text-center">
+<section class="page-container mt-20 mb-20 text-center">
   <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres aumentar el stock de tu automotora?</h2>
   <p class="text-gray-700 mb-6">Trabajemos juntos. Te proveemos autos listos para entrega.</p>
 
