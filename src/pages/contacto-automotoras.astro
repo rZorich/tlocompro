@@ -9,109 +9,129 @@ const canonical = "https://tlocompro.cl/contacto-automotoras";
 
 <BaseLayout {title} {description} {canonical}>
 
-<section class="max-w-4xl mx-auto px-4 py-12">
+  <section class="max-w-4xl mx-auto px-4 py-12">
 
-  <!-- H1 -->
-  <h1 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4">
-    Contacto para automotoras
-  </h1>
+    <!-- H1 -->
+    <h1 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4">
+      Contacto para automotoras
+    </h1>
 
-  <p class="text-lg text-gray-700 mb-10 max-w-3xl">
-    Si tienes una automotora y necesitas abastecer tu stock con autos usados revisados, 
-    con documentación al día y listos para venta, completa este formulario y un especialista 
-    de <strong>Tlocompro</strong> te contactará a la brevedad.
-  </p>
+    <p class="text-lg text-gray-700 mb-10 max-w-3xl">
+      Si tienes una automotora y necesitas abastecer tu stock con autos usados revisados,
+      con documentación al día y listos para venta, completa este formulario y un especialista
+      de <strong>Tlocompro</strong> te contactará a la brevedad.
+    </p>
 
-  <!-- FORMULARIO -->
-  <form 
-    class="space-y-6 bg-white p-6 border rounded-2xl shadow-md"
-    action="https://formsubmit.co/YOUR_EMAIL" 
-    method="POST"
-  >
-
-    <!-- Nombre de la automotora -->
-    <div>
-      <label class="block font-semibold mb-1">Nombre de la automotora</label>
-      <input 
-        type="text" 
-        name="automotora" 
-        required
-        class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
-        placeholder="Ejemplo: Automotora Las Condes"
-      />
-    </div>
-
-    <!-- Nombre de contacto -->
-    <div>
-      <label class="block font-semibold mb-1">Nombre de contacto</label>
-      <input 
-        type="text" 
-        name="contacto" 
-        required
-        class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
-        placeholder="Ejemplo: Juan Pérez"
-      />
-    </div>
-
-    <!-- Teléfono -->
-    <div>
-      <label class="block font-semibold mb-1">Teléfono</label>
-      <input 
-        type="tel" 
-        name="telefono" 
-        required
-        class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
-        placeholder="+56 9 1234 5678"
-      />
-    </div>
-
-    <!-- Email -->
-    <div>
-      <label class="block font-semibold mb-1">Correo electrónico</label>
-      <input 
-        type="email" 
-        name="email" 
-        required
-        class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
-        placeholder="contacto@automotora.cl"
-      />
-    </div>
-
-    <!-- Tipo de autos requeridos -->
-    <div>
-      <label class="block font-semibold mb-1">¿Qué tipo de autos necesitas?</label>
-      <textarea
-        name="requerimientos"
-        rows="3"
-        class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
-        placeholder="Ejemplo: Autos desde 2010 en adelante, SUVs, sedanes, autos sin prenda..."
-      ></textarea>
-    </div>
-
-    <!-- Comentarios -->
-    <div>
-      <label class="block font-semibold mb-1">Comentarios adicionales</label>
-      <textarea
-        name="comentarios"
-        rows="3"
-        class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
-        placeholder="Información relevante, volumen mensual estimado, requerimientos especiales…"
-      ></textarea>
-    </div>
-
-    <!-- BOTÓN -->
-    <button 
-      type="submit" 
-      class="w-full bg-teal-700 hover:bg-teal-800 text-white py-4 px-6 rounded-xl font-semibold shadow-md transition"
+    <!-- FORMULARIO -->
+    <form
+      class="space-y-6 bg-white p-6 border rounded-2xl shadow-md"
+      action="https://formsubmit.co/contacto@tlocompro.cl"
+      method="POST"
     >
-      🚗 Enviar solicitud
-    </button>
 
-    <!-- Protección contra bots (FormSubmit) -->
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_next" value="https://tlocompro.cl/gracias">
-  </form>
+      <!-- Anti-spam honeypot (no lo ve el usuario) -->
+      <input type="text" name="_honey" style="display:none" tabindex="-1" value="" />
 
-</section>
+
+      <!-- Asunto y formato del email -->
+      <input type="hidden" name="_subject" value="Nuevo contacto de automotora (tlocompro.cl)" />
+      <input type="hidden" name="_template" value="table" />
+
+      <!-- Nombre de la automotora -->
+      <div>
+        <label class="block font-semibold mb-1" for="automotora">Nombre de la automotora</label>
+        <input
+          id="automotora"
+          type="text"
+          name="automotora"
+          required
+          autocomplete="organization"
+          class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
+          placeholder="Ejemplo: Automotora Las Condes"
+        />
+      </div>
+
+      <!-- Nombre de contacto -->
+      <div>
+        <label class="block font-semibold mb-1" for="contacto">Nombre de contacto</label>
+        <input
+          id="contacto"
+          type="text"
+          name="contacto"
+          required
+          autocomplete="name"
+          class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
+          placeholder="Ejemplo: Juan Pérez"
+        />
+      </div>
+
+      <!-- Teléfono -->
+      <div>
+        <label class="block font-semibold mb-1" for="telefono">Teléfono</label>
+        <input
+          id="telefono"
+          type="tel"
+          name="telefono"
+          required
+          inputmode="tel"
+          autocomplete="tel"
+          class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
+          placeholder="+56 9 1234 5678"
+        />
+      </div>
+
+      <!-- Email -->
+      <div>
+        <label class="block font-semibold mb-1" for="email">Correo electrónico</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          required
+          autocomplete="email"
+          class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
+          placeholder="contacto@automotora.cl"
+        />
+      </div>
+
+      <!-- Tipo de autos requeridos -->
+      <div>
+        <label class="block font-semibold mb-1" for="requerimientos">¿Qué tipo de autos necesitas?</label>
+        <textarea
+          id="requerimientos"
+          name="requerimientos"
+          rows="3"
+          class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
+          placeholder="Ejemplo: Autos desde 2010 en adelante, SUVs, sedanes, autos sin prenda."
+        ></textarea>
+      </div>
+
+      <!-- Comentarios -->
+      <div>
+        <label class="block font-semibold mb-1" for="comentarios">Comentarios adicionales</label>
+        <textarea
+          id="comentarios"
+          name="comentarios"
+          rows="3"
+          class="w-full border rounded-xl px-4 py-3 text-gray-700 focus:outline-none focus:border-teal-600"
+          placeholder="Información relevante, volumen mensual estimado, requerimientos especiales…"
+        ></textarea>
+      </div>
+
+      <!-- BOTÓN -->
+      <button
+        type="submit"
+        class="w-full bg-teal-700 hover:bg-teal-800 text-white py-4 px-6 rounded-xl font-semibold shadow-md transition"
+      >
+        🚗 Enviar solicitud
+      </button>
+
+      <!-- FormSubmit -->
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://tlocompro.cl/gracias" />
+
+    </form>
+
+  </section>    
 
 </BaseLayout>
