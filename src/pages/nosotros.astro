@@ -1,0 +1,86 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title = "Nosotros | Tlocompro";
+const description =
+  "Conoce Tlocompro: equipo de profesionales del rubro automotriz con más de 15 años de experiencia. Seriedad, transparencia y un proceso seguro para vender tu auto.";
+const canonical = "https://tlocompro.cl/nosotros";
+---
+
+<BaseLayout {title} {description} {canonical}>
+
+<section class="max-w-5xl mx-auto px-4 py-12">
+
+  <!-- H1 SOLO, A LO ANCHO -->
+  <h1 class="text-3xl font-extrabold mb-8 leading-tight">
+    Nosotros: quiénes somos en Tlocompro
+  </h1>
+
+  <!-- BLOQUE 1: TEXTO INTRODUCTORIO + IMAGEN -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+
+    <!-- TEXTO INTRODUCTORIO -->
+    <div>
+      <p class="text-lg text-gray-700 mb-4">
+        En <strong>Tlocompro</strong> trabajamos para que vender tu auto sea una experiencia
+        <strong>clara, cómoda, segura</strong> y sin pérdida de tiempo. Nuestra prioridad es que entiendas la oferta,
+        el porqué del valor y qué sigue después, sin presión y con comunicación directa.
+      </p>
+
+      <p class="text-lg text-gray-700 mb-6">
+        El equipo de <strong>Tlocompro</strong> está conformado por profesionales del rubro automotriz con
+        <strong>más de 15 años de experiencia</strong>. Esa trayectoria nos permite evaluar vehículos con criterio,
+        explicar la oferta con transparencia y acompañarte con un proceso ordenado y seguro.
+      </p>
+
+      <!-- BOTÓN CTA -->
+      <a
+        href="/oferta"
+        class="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3 px-6 rounded-lg shadow-md transition-all duration-200"
+      >
+        Quiero vender mi auto ahora
+      </a>
+    </div>
+
+    <!-- IMAGEN AL LADO DEL TEXTO INTRODUCTORIO -->
+    <div class="flex justify-center">
+      <img
+        src="/nosotros.webp"
+        alt="Equipo de profesionales automotrices de Tlocompro"
+        class="rounded-xl shadow-lg w-full max-w-md"
+        loading="eager"
+      />
+    </div>
+
+  </div>
+
+  <!-- BLOQUE 2: COMPROMISOS / DIFERENCIADORES -->
+  <div class="mt-16">
+    <h2 class="text-2xl font-bold mb-4">Nuestro compromiso</h2>
+
+    <ul class="list-disc list-inside text-gray-700 space-y-3">
+      <li>
+        <strong>Transparencia:</strong> si algo impacta el valor (estado, documentación u otros factores),
+        se conversa desde el inicio.
+      </li>
+      <li>
+        <strong>Oferta con fundamento:</strong> evaluamos con criterio de mercado y de vehículo,
+        buscando una propuesta coherente y explicable.
+      </li>
+      <li>
+        <strong>Orden y seguridad:</strong> priorizamos coordinación clara y acompañamiento documental para cerrar bien.
+      </li>
+    </ul>
+
+    <p class="mt-6 text-gray-600 text-sm">
+      Si quieres el detalle del proceso completo, revisa
+      <a class="underline" href="/como-funciona">cómo funciona</a>
+      o resuelve dudas en
+      <a class="underline" href="/preguntas-frecuentes">preguntas frecuentes</a>.
+    </p>
+  </div>
+
+</section>
+
+</BaseLayout>
+

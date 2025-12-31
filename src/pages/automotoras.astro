@@ -1,6 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import "../styles/automotoras-puro.css";
+// import "../styles/automotoras-puro.css";
 
 const title = "Autos para automotoras | Captación profesional de vehículos en Chile";
 const description =
@@ -10,166 +10,171 @@ const canonical = "https://tlocompro.cl/automotoras";
 
 <BaseLayout {title} {description} {canonical}>
 
-<section class="page-container py-12">
+  <!-- CONTENEDOR GENERAL -->
+  <section class="max-w-6xl mx-auto px-4 py-12">
 
+    <!-- HERO -->
+    <section class="max-w-6xl mx-auto px-4 py-16 md:flex md:items-center md:gap-12">
 
-  <!-- HERO -->
-  <section class="page-container py-16 md:flex md:items-center md:gap-12">
+      <!-- COLUMNA IZQUIERDA -->
+      <div class="md:w-1/2">
 
+        <!-- BADGE -->
+        <div
+          class="inline-flex items-center gap-2 text-xs font-semibold px-3 py-1 rounded-full bg-teal-100 text-teal-700 border border-teal-200 shadow-sm mb-4"
+        >
+          🤝 Servicio para automotoras y concesionarios
+        </div>
 
-  <!-- COLUMNA IZQUIERDA -->
-  <div class="md:w-1/2">
+        <h1 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4">
+          Abastecimiento profesional de autos para automotoras
+        </h1>
 
-    <!-- BADGE -->
-        <div class="badge-auto mb-4">
-      🤝 Servicio para automotoras y concesionarios
-    </div>
+        <p class="text-lg text-gray-700 mb-6">
+          En <strong>Tlocompro</strong> captamos y seleccionamos vehículos usados en excelente estado para tu
+          automotora.
+          Solo recibes autos revisados, con documentación al día y listos para ingresar a tu inventario.
+        </p>
 
-    <h1 class="text-3xl md:text-4xl font-extrabold leading-tight tracking-tight mb-4">
-      Abastecimiento profesional de autos para automotoras
-    </h1>
+        <!-- CTA -->
+        <a
+          href="/contacto-automotoras"
+          class="inline-flex bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-4 rounded-xl shadow-md transition"
+        >
+          🚗 Quiero abastecer mi automotora
+        </a>
 
-    <p class="text-lg text-gray-700 mb-6">
-      En <strong>Tlocompro</strong> captamos y seleccionamos vehículos usados en excelente estado para tu automotora. 
-      Solo recibes autos revisados, con documentación al día y listos para ingresar a tu inventario.
-    </p>
+      </div>
 
-    <!-- CTA -->
-    <a 
-      href="/contacto-automotoras" 
-      class="inline-flex bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-4 rounded-xl shadow-md transition"
-    >
-      🚗 Quiero abastecer mi automotora
-    </a>
+      <!-- COLUMNA DERECHA: IMAGEN PROFESIONAL -->
+      <div class="md:w-1/2 mt-10 md:mt-0">
+        <img
+          src="/automotora.webp"
+          alt="Abastecimiento de autos para automotoras en Chile"
+          width="900"
+          height="650"
+          class="w-full max-w-md rounded-2xl shadow-md mx-auto"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
 
-  </div>
+    </section>
 
-  <!-- COLUMNA DERECHA: IMAGEN PROFESIONAL -->
-  <div class="md:w-1/2 mt-10 md:mt-0">
-    <img 
-      src="/automotora.webp"
-      alt="Abastecimiento de autos para automotoras en Chile"
-      width="900"
-      height="650"
-      class="w-full max-w-md rounded-2xl shadow-md mx-auto"
-      loading="eager"
-      fetchpriority="high"
-    />
-  </div>
+    <!-- SECCIÓN: BENEFICIOS -->
+    <section class="max-w-6xl mx-auto px-4 mt-16">
 
-</section>
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Ventajas de trabajar con Tlocompro</h2>
 
+      <div class="grid md:grid-cols-3 gap-6">
 
+        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <h3 class="font-bold mb-2">📈 Más autos para tu stock</h3>
+          <p class="text-gray-600 text-sm">
+            Recibimos diariamente solicitudes de personas que quieren vender su vehículo.
+            Filtramos, tasamos y preseleccionamos los mejores autos para tu automotora.
+          </p>
+        </div>
 
-<!-- SECCIÓN: BENEFICIOS -->
-<section class="page-container mt-16">
+        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <h3 class="font-bold mb-2">🔍 Revisión documental completa</h3>
+          <p class="text-gray-600 text-sm">
+            Verificamos padrón, multas, deuda, prenda, encargo policial y revisión técnica.
+            Te entregamos autos con documentación al día y sin sorpresas.
+          </p>
+        </div>
 
+        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <h3 class="font-bold mb-2">⏱️ Ahorro de tiempo</h3>
+          <p class="text-gray-600 text-sm">
+            No pierdas horas respondiendo mensajes o coordinando visitas.
+            Nosotros gestionamos el contacto, la firma en notaría y el retiro.
+          </p>
+        </div>
 
-  <h2 class="text-2xl md:text-3xl font-bold mb-6">Ventajas de trabajar con Tlocompro</h2>
+      </div>
 
-  <div class="grid md:grid-cols-3 gap-6">
+    </section>
 
-    <div class="card-box">
-      <h3 class="font-bold mb-2">📈 Más autos para tu stock</h3>
-      <p class="text-gray-600 text-sm">
-        Recibimos diariamente solicitudes de personas que quieren vender su vehículo. 
-        Filtramos, tasamos y preseleccionamos los mejores autos para tu automotora.
-      </p>
-    </div>
+    <!-- SECCIÓN: CÓMO FUNCIONA -->
+    <section class="max-w-6xl mx-auto px-4 mt-20">
 
-    <div class="card-box">
-      <h3 class="font-bold mb-2">🔍 Revisión documental completa</h3>
-      <p class="text-gray-600 text-sm">
-        Verificamos padrón, multas, deuda, prenda, encargo policial y revisión técnica. 
-        Te entregamos autos con documentación al día y sin sorpresas.
-      </p>
-    </div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">Cómo funciona nuestro servicio para automotoras</h2>
 
-    <div class="card-box">
-      <h3 class="font-bold mb-2">⏱️ Ahorro de tiempo</h3>
-      <p class="text-gray-600 text-sm">
-        No pierdas horas respondiendo mensajes o coordinando visitas. 
-        Nosotros gestionamos el contacto, la firma en notaría y el retiro.
-      </p>
-    </div>
+      <div class="grid md:grid-cols-3 gap-6">
 
-  </div>
+        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">
+            1
+          </div>
+          <h3 class="font-bold mb-1">Recepción de vehículos</h3>
+          <p class="text-gray-600 text-sm">
+            Personas que desean vender su auto nos envían sus datos. Filtramos casos reales y autos adecuados
+            para automotoras.
+          </p>
+        </div>
 
-</section>
+        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">
+            2
+          </div>
+          <h3 class="font-bold mb-1">Evaluación y revisión</h3>
+          <p class="text-gray-600 text-sm">
+            Revisamos el estado mecánico, historial y documentación. Solo presentamos autos que cumplen estándares
+            de calidad.
+          </p>
+        </div>
 
-<!-- SECCIÓN: CÓMO FUNCIONA -->
-<section class="page-container mt-20">
+        <div class="p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
+          <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">
+            3
+          </div>
+          <h3 class="font-bold mb-1">Entrega lista para venta</h3>
+          <p class="text-gray-600 text-sm">
+            Coordinamos firma en notaría, realizamos el traspaso y te entregamos el vehículo sin trámites
+            adicionales.
+          </p>
+        </div>
 
+      </div>
 
-  <h2 class="text-2xl md:text-3xl font-bold mb-6">Cómo funciona nuestro servicio para automotoras</h2>
+    </section>
 
-  <div class="grid md:grid-cols-3 gap-6">
+    <!-- SECCIÓN: POR QUÉ ELEGIRNOS -->
+    <section class="max-w-6xl mx-auto px-4 mt-20">
 
-    <div class="card-box">
-      <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">1</div>
-      <h3 class="font-bold mb-1">Recepción de vehículos</h3>
-      <p class="text-gray-600 text-sm">
-        Personas que desean vender su auto nos envían sus datos. Filtramos casos reales y autos adecuados 
-        para automotoras.
-      </p>
-    </div>
+      <h2 class="text-2xl md:text-3xl font-bold mb-6">¿Por qué elegirnos como proveedor de autos?</h2>
 
-    <div class="card-box">
-      <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">2</div>
-      <h3 class="font-bold mb-1">Evaluación y revisión</h3>
-      <p class="text-gray-600 text-sm">
-        Revisamos el estado mecánico, historial y documentación. Solo presentamos autos que cumplen estándares 
-        de calidad.
-      </p>
-    </div>
+      <div class="space-y-4 text-gray-700">
 
-    <div class="card-box">
-      <div class="h-10 w-10 grid place-items-center rounded-xl bg-teal-700 text-white mb-3 font-bold">3</div>
-      <h3 class="font-bold mb-1">Entrega lista para venta</h3>
-      <p class="text-gray-600 text-sm">
-        Coordinamos firma en notaría, realizamos el traspaso y te entregamos el vehículo sin trámites 
-        adicionales.
-      </p>
-    </div>
+        <p class="text-lg">
+          Trabajar con Tlocompro te permite mantener un flujo constante de autos disponibles, sin preocuparte por el
+          desgaste del proceso de captación. Nos especializamos en atender a vendedores finales y filtrar solo los
+          mejores vehículos para tu automotora.
+        </p>
 
-  </div>
+        <p class="text-lg">
+          Además, te entregamos autos con revisión documental completa, transferencia inmediata y retiro en 24 horas.
+          Simplificamos todo el proceso para que puedas enfocarte en vender.
+        </p>
 
-</section>
+      </div>
 
-<!-- SECCIÓN: POR QUÉ ELEGIRNOS -->
-<section class="page-container mt-20">
+    </section>
 
+    <!-- CTA FINAL -->
+    <section class="max-w-6xl mx-auto px-4 mt-20 mb-20 text-center">
+      <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres aumentar el stock de tu automotora?</h2>
+      <p class="text-gray-700 mb-6">Trabajemos juntos. Te proveemos autos listos para entrega.</p>
 
-  <h2 class="text-2xl md:text-3xl font-bold mb-6">¿Por qué elegirnos como proveedor de autos?</h2>
+      <a
+        href="/contacto-automotoras"
+        class="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-4 rounded-xl shadow-md"
+      >
+        🚗 Contactar a Tlocompro
+      </a>
+    </section>
 
-  <div class="space-y-4 text-gray-700">
-
-    <p class="text-lg">
-      Trabajar con Tlocompro te permite mantener un flujo constante de autos disponibles, sin preocuparte por el 
-      desgaste del proceso de captación. Nos especializamos en atender a vendedores finales y filtrar solo los 
-      mejores vehículos para tu automotora.
-    </p>
-
-    <p class="text-lg">
-      Además, te entregamos autos con revisión documental completa, transferencia inmediata y retiro en 24 horas. 
-      Simplificamos todo el proceso para que puedas enfocarte en vender.
-    </p>
-
-  </div>
-
-</section>
-
-<!-- CTA FINAL -->
-<section class="page-container mt-20 mb-20 text-center">
-  <h2 class="text-2xl md:text-3xl font-bold mb-4">¿Quieres aumentar el stock de tu automotora?</h2>
-  <p class="text-gray-700 mb-6">Trabajemos juntos. Te proveemos autos listos para entrega.</p>
-
-  <a 
-    href="/contacto-automotoras" 
-    class="inline-block bg-teal-700 hover:bg-teal-800 text-white font-semibold px-8 py-4 rounded-xl shadow-md"
-  >
-    🚗 Contactar a Tlocompro
-  </a>
-</section>
+  </section>
 
 </BaseLayout>
